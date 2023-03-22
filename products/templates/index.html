@@ -1,0 +1,33 @@
+{#某页中有的#}
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Products</h1>
+    <div class="row">
+        {% for proudct in products %}
+            <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ proudct.image_url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ proudct.name}}</h5>
+                    <p class="card-text">${{ proudct.price}}</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+{#    <ul>#}
+{#        {% for proudct in products %}#}
+{#            <li>{{ proudct.name }}(${{ proudct.price }})</li>#}
+{#        {% endfor %}#}
+        {#添加标题#}
+        {#    <li>Item 1</li>#}
+        {#    <li>Item 2</li>#}
+        {#    <li>Item 3</li>#}
+{#    </ul>#}
+
+{% endblock %}
